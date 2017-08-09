@@ -22,7 +22,7 @@ var articles={
              this is my first article.this is my first article.this is my first article.this is my first article.this is my first article
              .this is my first article.this is my first article.this is my first article.this is my first article.this is my first article.
             </p>`,
-};
+},
     'articleTwo':{
     title: 'Article-two | chandu',
     heading:'Article two',
@@ -33,7 +33,7 @@ var articles={
             <p>
                 this is my second article.this is my second article.this is my second article.this is my second article.this is my second article    .this is my second article.this is my second article.this is my second article.
             </p>`,
-};
+},
     'articleThree':{
     title: 'Article-three | chandu',
     heading:'Article three',
@@ -41,7 +41,7 @@ var articles={
     content:`<p>
                 this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.
             </p>`,
-};
+},
 };
 
 function createTemplate(data){
@@ -94,16 +94,11 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
+    var articleName=req.paras.articleName;
   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two',function(req,res){
-     res.send(createTemplate(articleTwo));
-});
 
-app.get('/article-three',function(req,res){
-    res.send(createTemplate(articleThree));
-});
 
 
 // Do not change port, otherwise your app won't run on IMAD servers

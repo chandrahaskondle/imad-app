@@ -118,9 +118,21 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/:articleName', function (req, res) {
-    var articleName=req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+app.get('/articles/:articleName', function (req, res) {
+  pool.query("SELECT * FROM article WHERE article="+req.prams.articleName,function(err,res){
+    if(err){
+        res.status(500).send(err.toString());
+    } else{
+         if(result.rows.length===0){
+            res.status(400).seend('Article not found');
+          }   
+        else{
+            var articleData=result.rows[0];
+            res.send(createTemplate(articleData));
+        }
+     
+        }    
+    });
 });
 
 

@@ -51,46 +51,6 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
-var articles={
-    'article-one':{
-    title: 'Article-one | chandu',
-    heading:'Article one',
-    date:'aug 4,2017',
-    content:`<p>
-             this is my first article.this is my first article.this is my first article.this is my first article.this is my first article
-             .this is my first article.this is my first article.this is my first article.this is my first article.this is my first article.
-            </p>
-            <p>
-             this is my first article.this is my first article.this is my first article.this is my first article.this is my first article
-             .this is my first article.this is my first article.this is my first article.this is my first article.this is my first article.
-            </p>
-            <p>
-             this is my first article.this is my first article.this is my first article.this is my first article.this is my first article
-             .this is my first article.this is my first article.this is my first article.this is my first article.this is my first article.
-            </p>`,
-},
-    'article-two':{
-    title: 'Article-two | chandu',
-    heading:'Article two',
-    date:'aug 5,2017',
-    content:`<p>
-                this is my second article.this is my second article.this is my second article.this is my second article.this is my second article    .this is my second article.this is my second article.this is my second article.
-            </p>
-            <p>
-                this is my second article.this is my second article.this is my second article.this is my second article.this is my second article    .this is my second article.this is my second article.this is my second article.
-            </p>`,
-},
-    'article-three':{
-    title: 'Article-three | chandu',
-    heading:'Article three',
-    date:'aug 6,2017',
-    content:`<p>
-                this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.this is my third article.
-            </p>`,
-},
-};
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
